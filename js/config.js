@@ -64,5 +64,28 @@ export const siteConfig = {
       alt: "Professionals collaborating in a business environment",
     },
   },
+  about: {
+    id: "about",
+
+    eyebrow: "WHO WE ARE",
+
+    heading: "A Trusted Partner for Diverse Business Needs",
+
+    description:
+      "Delight Global Services Nigeria is a diversified services, procurement, and contracting company committed to helping businesses and individuals access the products and services they need. From industrial supplies and general procurement to construction, IT equipment, and facility services, we bring multiple solutions together to make sourcing and service delivery more convenient.",
+
+    supportingText:
+      "We work to understand our clients' requirements and provide practical solutions that align with their needs, helping them source essential supplies and access services across different sectors.",
+
+    cta: {
+      label: "Learn More About Us",
+      href: "#about",
+    },
+
+    image: {
+      src: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80",
+      alt: "Business professionals reviewing documents and collaborating on project requirements",
+    },
+  },
 };
 // export { siteConfig };

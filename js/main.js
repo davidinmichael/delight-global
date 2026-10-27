@@ -150,4 +150,65 @@ NAVBAR
   };
 
   initHero();
+  // ========================================
+  // ABOUT US SECTION
+  // ========================================
+
+  const initAbout = () => {
+    const aboutSection = document.querySelector(".about");
+    const aboutImage = document.getElementById("about-image");
+    const aboutEyebrow = document.getElementById("about-eyebrow");
+    const aboutHeading = document.getElementById("about-heading");
+    const aboutDescription = document.getElementById("about-description");
+    const aboutSupportingText = document.getElementById(
+      "about-supporting-text",
+    );
+    const aboutActions = document.getElementById("about-actions");
+
+    const about = siteConfig.about;
+
+    if (!about) return;
+
+    // Set section ID
+    if (aboutSection && about.id) {
+      aboutSection.id = about.id;
+    }
+
+    // Render eyebrow
+    if (aboutEyebrow) {
+      aboutEyebrow.textContent = about.eyebrow;
+    }
+
+    // Render heading
+    if (aboutHeading) {
+      aboutHeading.textContent = about.heading;
+    }
+
+    // Render description
+    if (aboutDescription) {
+      aboutDescription.textContent = about.description;
+    }
+
+    // Render supporting text
+    if (aboutSupportingText) {
+      aboutSupportingText.textContent = about.supportingText;
+    }
+
+    // Render CTA
+    if (aboutActions && about.cta) {
+      aboutActions.innerHTML = `
+        <a href="${about.cta.href}" class="about__cta">
+            ${about.cta.label}
+        </a>
+    `;
+    }
+
+    // Render image
+    if (aboutImage && about.image) {
+      aboutImage.src = about.image.src;
+      aboutImage.alt = about.image.alt || "";
+    }
+  };
+
+  initAbout();
 });
