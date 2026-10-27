@@ -87,5 +87,116 @@ export const siteConfig = {
       alt: "Business professionals reviewing documents and collaborating on project requirements",
     },
   },
+  services: {
+    id: "services",
+
+    eyebrow: "WHAT WE OFFER",
+
+    heading: "Solutions for Every Business Need",
+
+    description:
+      "From industrial supplies and procurement to construction, technology, and facility management, we provide a range of products and services designed to meet the needs of businesses and individuals across different sectors.",
+
+    items: [
+      {
+        id: "industrial-chemicals",
+        title: "Industrial Chemicals & Supplies",
+        description:
+          "Sourcing and supply of industrial chemicals and essential materials for industrial and commercial operations.",
+        image: {
+          src: "https://images.unsplash.com/photo-1675860094441-5127d5b05820?auto=format&fit=crop&w=800&q=80",
+          alt: "Industrial equipment and materials in a professional industrial setting",
+        },
+      },
+
+      {
+        id: "general-procurement",
+        title: "General Procurement & Imports",
+        description:
+          "Procurement and sourcing of products and equipment to meet business and operational requirements.",
+        image: {
+          src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+          alt: "Organized warehouse with products and supplies ready for distribution",
+        },
+      },
+
+      {
+        id: "construction",
+        title: "Construction & Civil Engineering",
+        description:
+          "Construction and civil engineering services to support building, infrastructure, and related project requirements.",
+        image: {
+          src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+          alt: "Construction workers carrying out work at a building project",
+        },
+      },
+
+      {
+        id: "it-equipment",
+        title: "IT Equipment & Supplies",
+        description:
+          "Supply of IT equipment and technology products to support business operations and workplace needs.",
+        image: {
+          src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80",
+          alt: "Modern office workspace equipped for business operations",
+        },
+      },
+
+      {
+        id: "cleaning-environmental",
+        title: "Cleaning & Environmental Services",
+        description:
+          "Cleaning and environmental services to help maintain clean, orderly, and functional business and commercial spaces.",
+        image: {
+          src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80",
+          alt: "Professional cleaning personnel maintaining a commercial environment",
+        },
+      },
+
+      {
+        id: "stationery-office",
+        title: "Stationery & Office Supplies",
+        description:
+          "Supply of stationery, office consumables, and essential materials to support everyday workplace activities.",
+        image: {
+          src: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80",
+          alt: "Writing materials and stationery arranged on a desk",
+        },
+      },
+
+      {
+        id: "recruitment-training",
+        title: "Recruitment & Training",
+        description:
+          "Recruitment and training support to help organizations address staffing needs and develop workforce capabilities.",
+        image: {
+          src: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80",
+          alt: "Professionals collaborating in a business and training environment",
+        },
+      },
+
+      {
+        id: "agriculture",
+        title: "Agriculture & Agricultural Equipment",
+        description:
+          "Agricultural products, equipment, and related supplies to support farming and agricultural operations.",
+        image: {
+          src: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
+          alt: "Agricultural landscape with cultivated farmland",
+        },
+      },
+
+      {
+        id: "facility-management",
+        title: "Home & Facility Management",
+        description:
+          "Facility and property-related support to help maintain functional, organized, and well-managed spaces.",
+        image: {
+          src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+          alt: "Modern commercial property in a professional business environment",
+        },
+      },
+    ],
+  },
 };
 // export { siteConfig };

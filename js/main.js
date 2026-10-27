@@ -211,4 +211,69 @@ NAVBAR
   };
 
   initAbout();
+  // ========================================
+  // SERVICES SECTION
+  // ========================================
+
+  const initServices = () => {
+    const servicesSection = document.querySelector(".services");
+    const servicesEyebrow = document.getElementById("services-eyebrow");
+    const servicesHeading = document.getElementById("services-heading");
+    const servicesDescription = document.getElementById("services-description");
+    const servicesGrid = document.getElementById("services-grid");
+
+    const services = siteConfig.services;
+
+    if (!services) return;
+
+    // Set section ID
+    if (servicesSection && services.id) {
+      servicesSection.id = services.id;
+    }
+
+    // Render section heading and description
+    if (servicesEyebrow) {
+      servicesEyebrow.textContent = services.eyebrow;
+    }
+
+    if (servicesHeading) {
+      servicesHeading.textContent = services.heading;
+    }
+
+    if (servicesDescription) {
+      servicesDescription.textContent = services.description;
+    }
+
+    // Render service cards
+    if (servicesGrid && Array.isArray(services.items)) {
+      servicesGrid.innerHTML = services.items
+        .map(
+          (service) => `
+        <article class="services__card" id="${service.id}">
+            <div class="services__card-visual">
+                <img
+                    class="services__card-image"
+                    src="${service.image.src}"
+                    alt="${service.image.alt || service.title}"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="services__card-content">
+                <h3 class="services__card-title">
+                    ${service.title}
+                </h3>
+
+                <p class="services__card-description">
+                    ${service.description}
+                </p>
+            </div>
+        </article>
+    `,
+        )
+        .join("");
+    }
+  };
+
+  initServices();
 });
