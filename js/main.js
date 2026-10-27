@@ -276,4 +276,84 @@ NAVBAR
   };
 
   initServices();
+  // ========================================
+  // INDUSTRIES SECTION
+  // ========================================
+
+  const initIndustries = () => {
+    const industriesSection = document.querySelector(".industries");
+    const industriesEyebrow = document.getElementById("industries-eyebrow");
+    const industriesHeading = document.getElementById("industries-heading");
+    const industriesDescription = document.getElementById(
+      "industries-description",
+    );
+    const industriesGrid = document.getElementById("industries-grid");
+    const industriesActions = document.getElementById("industries-actions");
+
+    const industries = siteConfig.industries;
+
+    if (!industries) return;
+
+    // Set section ID
+    if (industriesSection && industries.id) {
+      industriesSection.id = industries.id;
+    }
+
+    // Render section heading and description
+    if (industriesEyebrow) {
+      industriesEyebrow.textContent = industries.eyebrow;
+    }
+
+    if (industriesHeading) {
+      industriesHeading.textContent = industries.heading;
+    }
+
+    if (industriesDescription) {
+      industriesDescription.textContent = industries.description;
+    }
+
+    // Render industry cards
+    if (industriesGrid && Array.isArray(industries.items)) {
+      industriesGrid.innerHTML = industries.items
+        .map(
+          (industry) => `
+        <article class="industries__card" id="${industry.id}">
+            <div class="industries__card-visual">
+                <img
+                    class="industries__card-image"
+                    src="${industry.image.src}"
+                    alt="${industry.image.alt || industry.title}"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="industries__card-content">
+                <h3 class="industries__card-title">
+                    ${industry.title}
+                </h3>
+
+                <p class="industries__card-description">
+                    ${industry.description}
+                </p>
+            </div>
+        </article>
+    `,
+        )
+        .join("");
+    }
+
+    // Render section CTA
+    if (industriesActions && industries.cta) {
+      industriesActions.innerHTML = `
+        <a
+            href="${industries.cta.href}"
+            class="industries__cta"
+        >
+            ${industries.cta.label}
+        </a>
+    `;
+    }
+  };
+
+  initIndustries();
 });

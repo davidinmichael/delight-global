@@ -198,5 +198,80 @@ export const siteConfig = {
       },
     ],
   },
+  industries: {
+    id: "industries",
+    eyebrow: "OUR INDUSTRY REACH",
+    heading: "Supporting Businesses Across Multiple Industries",
+    description:
+      "Different industries have different operational needs. We provide products, procurement, and service solutions to support businesses and organizations across a range of sectors, helping them access the resources they need to operate effectively.",
+
+    items: [
+      {
+        id: "oil-gas-industrial",
+        title: "Oil, Gas & Industrial",
+        description:
+          "Supporting industrial operations with chemical supplies, procurement, equipment, and related business requirements.",
+        image: {
+          src: "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=800&q=80",
+          alt: "Industrial facility with equipment and processing infrastructure",
+        },
+      },
+      {
+        id: "construction-engineering",
+        title: "Construction & Engineering",
+        description:
+          "Supporting construction and engineering requirements through relevant supplies, procurement, and construction-related services.",
+        image: {
+          src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+          alt: "Building construction and engineering project",
+        },
+      },
+      {
+        id: "manufacturing",
+        title: "Manufacturing",
+        description:
+          "Helping manufacturing businesses source industrial materials, equipment, and essential operational supplies.",
+        image: {
+          src: "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=800&q=80",
+          alt: "Industrial manufacturing facility and production equipment",
+        },
+      },
+      {
+        id: "corporate-offices-smes",
+        title: "Corporate Offices & SMEs",
+        description:
+          "Providing office equipment, stationery, IT supplies, and other essential products and services for everyday business operations.",
+        image: {
+          src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80",
+          alt: "Modern corporate office with workstations and meeting areas",
+        },
+      },
+      {
+        id: "agriculture",
+        title: "Agriculture",
+        description:
+          "Supporting agricultural activities with relevant equipment, products, and supplies for farming operations.",
+        image: {
+          src: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
+          alt: "Cultivated farmland representing agricultural operations",
+        },
+      },
+      {
+        id: "institutions-organizations",
+        title: "Institutions & Organizations",
+        description:
+          "Helping institutions and organizations source office supplies, equipment, and other products needed to support their operations.",
+        image: {
+          src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80",
+          alt: "Professional administrative workspace in an organizational setting",
+        },
+      },
+    ],
+
+    cta: {
+      label: "Discuss Your Business Needs",
+      href: "#contact",
+    },
+  },
 };
 // export { siteConfig };
