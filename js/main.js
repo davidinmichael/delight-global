@@ -438,4 +438,75 @@ NAVBAR
   };
 
   initProjects();
+  // ========================================
+  // WHY CHOOSE US SECTION
+  // ========================================
+
+  const initWhyChooseUs = () => {
+    const section = document.querySelector(".why-choose-us");
+    const eyebrow = document.getElementById("why-choose-us-eyebrow");
+    const heading = document.getElementById("why-choose-us-heading");
+    const description = document.getElementById("why-choose-us-description");
+    const grid = document.getElementById("why-choose-us-grid");
+    const actions = document.getElementById("why-choose-us-actions");
+
+    const whyChooseUs = siteConfig.whyChooseUs;
+
+    if (!whyChooseUs) return;
+
+    // Set section ID
+    if (section && whyChooseUs.id) {
+      section.id = whyChooseUs.id;
+    }
+
+    // Render section heading and description
+    if (eyebrow) {
+      eyebrow.textContent = whyChooseUs.eyebrow;
+    }
+
+    if (heading) {
+      heading.textContent = whyChooseUs.heading;
+    }
+
+    if (description) {
+      description.textContent = whyChooseUs.description;
+    }
+
+    // Render benefit cards
+    if (grid && Array.isArray(whyChooseUs.items)) {
+      grid.innerHTML = whyChooseUs.items
+        .map(
+          (item) => `
+        <article class="why-choose-us__card" id="${item.id}">
+            <div class="why-choose-us__icon" aria-hidden="true">
+                <i class="${item.icon}"></i>
+            </div>
+
+            <h3 class="why-choose-us__card-title">
+                ${item.title}
+            </h3>
+
+            <p class="why-choose-us__card-description">
+                ${item.description}
+            </p>
+        </article>
+    `,
+        )
+        .join("");
+    }
+
+    // Render section CTA
+    if (actions && whyChooseUs.cta) {
+      actions.innerHTML = `
+        <a
+            href="${whyChooseUs.cta.href}"
+            class="why-choose-us__cta"
+        >
+            ${whyChooseUs.cta.label}
+        </a>
+    `;
+    }
+  };
+
+  initWhyChooseUs();
 });

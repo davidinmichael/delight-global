@@ -354,5 +354,62 @@ export const siteConfig = {
       href: "#contact",
     },
   },
+  whyChooseUs: {
+    id: "why-choose-us",
+    eyebrow: "THE DELIGHT ADVANTAGE",
+    heading: "Why Businesses Choose Delight Global Services",
+    description:
+      "Finding the right products and services for your business shouldn't be complicated. We bring a range of procurement, supply, and service solutions together to help clients address their operational needs through one business partner.",
+
+    items: [
+      {
+        id: "diverse-service-offerings",
+        title: "Diverse Service Offerings",
+        description:
+          "From industrial supplies and procurement to construction, IT equipment, and facility services, we offer solutions across multiple business needs.",
+        icon: "fa-solid fa-layer-group",
+      },
+      {
+        id: "client-focused-approach",
+        title: "Client-Focused Approach",
+        description:
+          "We take the time to understand your requirements and identify suitable products or services for your specific needs.",
+        icon: "fa-solid fa-comments",
+      },
+      {
+        id: "practical-business-solutions",
+        title: "Practical Business Solutions",
+        description:
+          "We focus on providing relevant products and services that address everyday operational, procurement, and project requirements.",
+        icon: "fa-solid fa-screwdriver-wrench",
+      },
+      {
+        id: "convenience-multiple-needs",
+        title: "Convenience Across Multiple Needs",
+        description:
+          "Our range of services gives clients the opportunity to address different business requirements through a single service partner.",
+        icon: "fa-solid fa-diagram-project",
+      },
+      {
+        id: "commitment-service-delivery",
+        title: "Commitment to Service Delivery",
+        description:
+          "We aim to understand project expectations, communicate requirements clearly, and work toward delivering services in line with agreed specifications.",
+        icon: "fa-solid fa-clipboard-check",
+      },
+      {
+        id: "solutions-different-sectors",
+        title: "Solutions for Different Sectors",
+        description:
+          "We serve a broad range of business and operational needs, with offerings relevant to industries such as construction, manufacturing, agriculture, and corporate services.",
+        icon: "fa-solid fa-building",
+      },
+    ],
+
+    cta: {
+      label: "Let's Work Together",
+      href: "#contact",
+    },
+  },
 };
 // export { siteConfig };
