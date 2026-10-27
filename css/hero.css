@@ -1,0 +1,250 @@
+/* ========================================
+HERO SECTION
+======================================== */
+
+.hero {
+position: relative;
+overflow: hidden;
+padding: 5rem 0;
+background-color: var(--surface-color);
+}
+
+.hero__container {
+max-width: var(--container-width);
+margin: 0 auto;
+padding: 0 var(--container-padding);
+
+display: grid;
+grid-template-columns: 1fr 1fr;
+align-items: center;
+gap: 3.5rem;
+
+}
+
+/* Hero Content */
+
+.hero__content {
+max-width: 580px;
+}
+
+.hero__eyebrow {
+display: inline-block;
+margin-bottom: var(--spacing-lg);
+
+color: var(--primary-color);
+font-size: var(--font-size-sm);
+font-weight: 700;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+
+}
+
+.hero__heading {
+margin-bottom: var(--spacing-lg);
+
+color: var(--secondary-color);
+font-size: clamp(2.5rem, 4vw, 3.75rem);
+font-weight: 800;
+line-height: 1.12;
+letter-spacing: -0.035em;
+
+}
+
+.hero__description {
+max-width: 540px;
+margin-bottom: var(--spacing-xl);
+
+color: var(--text-muted);
+font-size: var(--font-size-lg);
+line-height: 1.8;
+
+}
+
+/* Hero Actions */
+
+.hero__actions {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: var(--spacing-md);
+}
+
+.hero__button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: var(--spacing-sm);
+
+min-height: 50px;
+padding: 0.875rem 1.5rem;
+
+border: var(--border-width) solid transparent;
+border-radius: var(--border-radius-md);
+
+font-size: var(--font-size-base);
+font-weight: 600;
+text-align: center;
+white-space: nowrap;
+
+transition:
+    background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease,
+    border-color var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
+
+}
+
+.hero__button {
+transform: translateY(-2px);
+}
+
+/* Primary Button */
+
+.hero__button--primary {
+background-color: var(--primary-color);
+color: #ffffff;
+border-color: var(--primary-color);
+}
+
+.hero__button--primary {
+background-color: var(--secondary-color);
+border-color: var(--secondary-color);
+}
+
+/* Secondary Button */
+
+.hero__button--secondary {
+background-color: transparent;
+color: var(--secondary-color);
+border-color: var(--border-color);
+}
+
+.hero__button--secondary {
+background-color: var(--background-color);
+border-color: var(--primary-color);
+color: var(--primary-color);
+}
+
+/* Hero Image */
+
+.hero__visual {
+position: relative;
+min-width: 0;
+}
+
+.hero__image {
+width: 100%;
+height: 480px;
+object-fit: cover;
+object-position: center;
+border-radius: var(--border-radius-lg);
+box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+RESPONSIVE DESIGN
+======================================== */
+
+/* Tablets and Small Laptops */
+
+@media (max-width: 1024px) {
+.hero {
+padding: 4rem 0;
+}
+
+.hero__container {
+    gap: var(--spacing-xl);
+}
+
+.hero__heading {
+    font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+}
+
+.hero__description {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+}
+
+.hero__image {
+    height: 420px;
+}
+
+}
+
+/* Tablets and Mobile Devices */
+
+@media (max-width: 768px) {
+.hero {
+padding: 3.5rem 0;
+}
+
+.hero__container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+}
+
+.hero__content {
+    max-width: 650px;
+}
+
+.hero__eyebrow {
+    margin-bottom: var(--spacing-md);
+}
+
+.hero__heading {
+    max-width: 600px;
+    font-size: clamp(2.25rem, 7vw, 3.25rem);
+}
+
+.hero__description {
+    max-width: 600px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero__image {
+    height: 380px;
+}
+
+}
+
+/* Small Mobile Devices */
+
+@media (max-width: 480px) {
+.hero {
+padding: 2.75rem 0;
+}
+
+.hero__container {
+    gap: var(--spacing-xl);
+}
+
+.hero__eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+.hero__heading {
+    font-size: 2.25rem;
+    letter-spacing: -0.025em;
+}
+
+.hero__description {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+}
+
+.hero__actions {
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.hero__button {
+    width: 100%;
+}
+
+.hero__image {
+    height: 280px;
+    border-radius: var(--border-radius-md);
+}
+
+}

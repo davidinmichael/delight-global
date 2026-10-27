@@ -84,4 +84,70 @@ NAVBAR
 
   // Initialize navbar
   initNavbar();
+
+  // ========================================
+  // HERO SECTION
+  // ========================================
+
+  const initHero = () => {
+    const heroSection = document.querySelector(".hero");
+    const heroEyebrow = document.getElementById("hero-eyebrow");
+    const heroHeading = document.getElementById("hero-heading");
+    const heroDescription = document.getElementById("hero-description");
+    const heroActions = document.getElementById("hero-actions");
+    const heroImage = document.getElementById("hero-image");
+
+    const hero = siteConfig.hero;
+
+    if (!hero) return;
+
+    // Set section ID
+    if (heroSection && hero.id) {
+      heroSection.id = hero.id;
+    }
+
+    // Render eyebrow
+    if (heroEyebrow) {
+      heroEyebrow.textContent = hero.eyebrow;
+    }
+
+    // Render heading
+    if (heroHeading) {
+      heroHeading.textContent = hero.heading;
+    }
+
+    // Render description
+    if (heroDescription) {
+      heroDescription.textContent = hero.description;
+    }
+
+    // Render buttons
+    if (heroActions && Array.isArray(hero.buttons)) {
+      heroActions.innerHTML = hero.buttons
+        .map((button) => {
+          const styleClass =
+            button.style === "secondary"
+              ? "hero__button--secondary"
+              : "hero__button--primary";
+
+          return `
+                <a
+                    href="${button.href}"
+                    class="hero__button ${styleClass}"
+                >
+                    ${button.label}
+                </a>
+            `;
+        })
+        .join("");
+    }
+
+    // Render image
+    if (heroImage && hero.image) {
+      heroImage.src = hero.image.src;
+      heroImage.alt = hero.image.alt || "";
+    }
+  };
+
+  initHero();
 });
