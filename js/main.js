@@ -509,4 +509,105 @@ NAVBAR
   };
 
   initWhyChooseUs();
+  // ========================================
+  // TESTIMONIALS SECTION
+  // ========================================
+
+  const initTestimonials = () => {
+    const section = document.querySelector(".testimonials");
+    const eyebrow = document.getElementById("testimonials-eyebrow");
+    const heading = document.getElementById("testimonials-heading");
+    const description = document.getElementById("testimonials-description");
+    const grid = document.getElementById("testimonials-grid");
+    const actions = document.getElementById("testimonials-actions");
+
+    const testimonials = siteConfig.testimonials;
+
+    if (!testimonials) return;
+
+    // Set section ID
+    if (section && testimonials.id) {
+      section.id = testimonials.id;
+    }
+
+    // Render section heading and description
+    if (eyebrow) {
+      eyebrow.textContent = testimonials.eyebrow;
+    }
+
+    if (heading) {
+      heading.textContent = testimonials.heading;
+    }
+
+    if (description) {
+      description.textContent = testimonials.description;
+    }
+
+    // Render testimonial cards
+    if (grid && Array.isArray(testimonials.items)) {
+      grid.innerHTML = testimonials.items
+        .map((item) => {
+          const client = item.client || {};
+          const image = client.image || {};
+
+          return `
+                <article class="testimonials__card" id="${item.id}">
+
+                    <div class="testimonials__quote-icon" aria-hidden="true">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+
+                    <blockquote class="testimonials__quote">
+                        ${item.quote}
+                    </blockquote>
+
+                    <div class="testimonials__client">
+                        ${
+                          image.src
+                            ? `
+                                    <img
+                                        class="testimonials__client-image"
+                                        src="${image.src}"
+                                        alt="${image.alt || client.name || "Client"}"
+                                        loading="lazy"
+                                    >
+                                `
+                            : ""
+                        }
+
+                        <div class="testimonials__client-details">
+                            <h3 class="testimonials__client-name">
+                                ${client.name || ""}
+                            </h3>
+
+                            <p class="testimonials__client-role">
+                                ${client.role || ""}
+                            </p>
+
+                            <p class="testimonials__client-company">
+                                ${client.company || ""}
+                            </p>
+                        </div>
+                    </div>
+
+                </article>
+            `;
+        })
+        .join("");
+    }
+
+    // Render section CTA
+    if (actions && testimonials.cta) {
+      actions.innerHTML = `
+            <a
+                href="${testimonials.cta.href}"
+                class="testimonials__cta"
+            >
+                ${testimonials.cta.label}
+            </a>
+        `;
+    }
+  };
+
+  initTestimonials();
 });

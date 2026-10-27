@@ -411,5 +411,56 @@ export const siteConfig = {
       href: "#contact",
     },
   },
+  testimonials: {
+    id: "testimonials",
+    eyebrow: "CLIENT TESTIMONIALS",
+    heading: "What Our Clients Say About Us",
+    description:
+      "We value the relationships we build with our clients and the opportunity to support their business needs. Here's what our clients have to say about their experience working with us.",
+    items: [
+      {
+        id: "testimonial-1",
+        quote:
+          "Delight Global Services understood our supply requirements and helped us source the materials needed for our operations. Communication throughout the process was clear and professional.",
+        client: {
+          name: "Imoh Uko",
+          role: "Procurement Manager",
+          company: "Cinix",
+          image: {
+            src: "https://res.cloudinary.com/dskpdlvxu/image/upload/v1783291003/3032_akuhrg.jpg",
+            alt: "Professional headshot of the client",
+          },
+        },
+      },
+      {
+        id: "testimonial-2",
+        quote:
+          "We needed a reliable partner to help us with our equipment procurement. The process was straightforward, and the supplied items addressed our stated requirements.",
+        client: {
+          name: "Janet Ibekwe",
+          role: "Operations Manager",
+          company: "Dylnx",
+          image: {
+            src: "https://res.cloudinary.com/dskpdlvxu/image/upload/v1783291003/2149009408_m9evcw.jpg",
+            alt: "Professional headshot of the client",
+          },
+        },
+      },
+      {
+        id: "testimonial-3",
+        quote:
+          "We appreciated the communication and attention given to our project requirements. The team worked with us to understand the scope of the work and the expected deliverables.",
+        client: {
+          name: "Ololade Odume",
+          role: "Project Coordinator",
+          company: "Bendley",
+          image: {
+            src: "https://res.cloudinary.com/dskpdlvxu/image/upload/v1783291003/3032_akuhrg.jpg",
+            alt: "Professional headshot of the client",
+          },
+        },
+      },
+    ],
+    cta: { label: "Work With Us", href: "#contact" },
+  },
 };
-// export { siteConfig };
