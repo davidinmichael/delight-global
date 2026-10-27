@@ -273,5 +273,86 @@ export const siteConfig = {
       href: "#contact",
     },
   },
+  projects: {
+    id: "projects",
+    eyebrow: "OUR TRACK RECORD",
+    heading: "Projects That Reflect Our Capabilities",
+    description:
+      "From procurement and industrial supplies to construction and facility support, our projects reflect our commitment to meeting client requirements with practical solutions. Explore selected projects that demonstrate the range of services we provide.",
+
+    items: [
+      {
+        id: "industrial-chemical-supply",
+        title: "Industrial Chemical Supply",
+        category: "Industrial Supplies & Procurement",
+        description:
+          "Supply of specified industrial chemicals and related materials to support the operational requirements of an industrial client.",
+        image: {
+          src: "https://images.unsplash.com/photo-1581093458791-9d15482442f4?auto=format&fit=crop&w=900&q=80",
+          alt: "Industrial equipment and materials in an industrial setting",
+        },
+      },
+      {
+        id: "office-equipment-procurement",
+        title: "Office Equipment Procurement",
+        category: "IT Equipment & Procurement",
+        description:
+          "Procurement and supply of essential IT equipment to support workplace operations and improve access to business technology.",
+        image: {
+          src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
+          alt: "Modern office workspace with business equipment",
+        },
+      },
+      {
+        id: "building-construction-renovation",
+        title: "Building Construction & Renovation",
+        category: "Construction & Civil Engineering",
+        description:
+          "Execution of building-related works to meet specified project requirements, with attention to construction quality and delivery expectations.",
+        image: {
+          src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80",
+          alt: "Construction workers carrying out work at a building project",
+        },
+      },
+      {
+        id: "commercial-facility-maintenance",
+        title: "Commercial Facility Maintenance",
+        category: "Cleaning & Facility Management",
+        description:
+          "Provision of facility support services to help maintain a clean, orderly, and functional commercial environment.",
+        image: {
+          src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
+          alt: "Clean and professionally maintained commercial office space",
+        },
+      },
+      {
+        id: "agricultural-equipment-supply",
+        title: "Agricultural Equipment Supply",
+        category: "Agriculture & Equipment",
+        description:
+          "Sourcing and supply of agricultural equipment and related materials to support farming activities and operational requirements.",
+        image: {
+          src: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80",
+          alt: "Agricultural farmland representing farming operations",
+        },
+      },
+      {
+        id: "office-supplies-consumables",
+        title: "Office Supplies & Consumables",
+        category: "General Procurement",
+        description:
+          "Supply of stationery, office consumables, and essential workplace materials to support routine administrative operations.",
+        image: {
+          src: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80",
+          alt: "Writing materials and stationery arranged on a desk",
+        },
+      },
+    ],
+
+    cta: {
+      label: "Discuss Your Next Project",
+      href: "#contact",
+    },
+  },
 };
 // export { siteConfig };

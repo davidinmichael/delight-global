@@ -356,4 +356,86 @@ NAVBAR
   };
 
   initIndustries();
+  // ========================================
+  // PAST PROJECTS SECTION
+  // ========================================
+
+  const initProjects = () => {
+    const projectsSection = document.querySelector(".projects");
+    const projectsEyebrow = document.getElementById("projects-eyebrow");
+    const projectsHeading = document.getElementById("projects-heading");
+    const projectsDescription = document.getElementById("projects-description");
+    const projectsGrid = document.getElementById("projects-grid");
+    const projectsActions = document.getElementById("projects-actions");
+
+    const projects = siteConfig.projects;
+
+    if (!projects) return;
+
+    // Set section ID
+    if (projectsSection && projects.id) {
+      projectsSection.id = projects.id;
+    }
+
+    // Render section heading and description
+    if (projectsEyebrow) {
+      projectsEyebrow.textContent = projects.eyebrow;
+    }
+
+    if (projectsHeading) {
+      projectsHeading.textContent = projects.heading;
+    }
+
+    if (projectsDescription) {
+      projectsDescription.textContent = projects.description;
+    }
+
+    // Render project cards
+    if (projectsGrid && Array.isArray(projects.items)) {
+      projectsGrid.innerHTML = projects.items
+        .map(
+          (project) => `
+        <article class="projects__card" id="${project.id}">
+            <div class="projects__card-visual">
+                <img
+                    class="projects__card-image"
+                    src="${project.image.src}"
+                    alt="${project.image.alt || project.title}"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="projects__card-content">
+                <span class="projects__card-category">
+                    ${project.category}
+                </span>
+
+                <h3 class="projects__card-title">
+                    ${project.title}
+                </h3>
+
+                <p class="projects__card-description">
+                    ${project.description}
+                </p>
+            </div>
+        </article>
+    `,
+        )
+        .join("");
+    }
+
+    // Render section CTA
+    if (projectsActions && projects.cta) {
+      projectsActions.innerHTML = `
+        <a
+            href="${projects.cta.href}"
+            class="projects__cta"
+        >
+            ${projects.cta.label}
+        </a>
+    `;
+    }
+  };
+
+  initProjects();
 });
