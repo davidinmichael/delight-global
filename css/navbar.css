@@ -1,0 +1,226 @@
+/* ========================================
+NAVBAR
+======================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: var(--background-color);
+  border-bottom: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar {
+  max-width: var(--container-width);
+  min-height: 80px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+}
+
+/* Brand */
+
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.navbar__logo {
+  width: auto;
+  max-width: 180px;
+  max-height: 60px;
+  object-fit: contain;
+}
+
+/* Navigation Menu */
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.navbar__links a {
+  display: inline-block;
+  padding: var(--spacing-sm) 0;
+
+  color: var(--secondary-color);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+
+  transition: color var(--transition-speed) ease;
+}
+
+
+/* Call-to-Action */
+
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.75rem 1.25rem;
+
+  background-color: var(--primary-color);
+  color: #ffffff;
+
+  font-size: var(--font-size-base);
+  font-weight: 600;
+
+  border: var(--border-width) solid var(--primary-color);
+  border-radius: var(--border-radius-md);
+
+  white-space: nowrap;
+
+  transition:
+    background-color var(--transition-speed) ease,
+    border-color var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
+}
+
+.navbar__cta {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.navbar__cta {
+  outline-color: var(--primary-color);
+}
+
+/* Mobile Menu Toggle */
+
+.navbar__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  background: transparent;
+  color: var(--secondary-color);
+
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius-md);
+
+  font-size: var(--font-size-xl);
+}
+
+/* ========================================
+RESPONSIVE NAVBAR
+======================================== */
+
+@media (max-width: 1024px) {
+  .navbar {
+    gap: var(--spacing-md);
+  }
+
+  .navbar__menu {
+    gap: var(--spacing-lg);
+  }
+
+  .navbar__links {
+    gap: var(--spacing-md);
+  }
+
+  .navbar__links a {
+    font-size: var(--font-size-sm);
+  }
+
+  .navbar__logo {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    min-height: 72px;
+    position: relative;
+  }
+
+  .navbar__logo {
+    max-width: 160px;
+    max-height: 52px;
+  }
+
+  .navbar__toggle {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  .navbar__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-lg);
+
+    padding: var(--spacing-lg) var(--container-padding);
+
+    background-color: var(--background-color);
+    border-bottom: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-md);
+  }
+
+  .navbar__menu.is-open {
+    display: flex;
+  }
+
+  .navbar__links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .navbar__links a {
+    display: block;
+    padding: 0.875rem 0;
+    font-size: var(--font-size-base);
+
+    border-bottom: var(--border-width) solid var(--border-color);
+  }
+
+  .navbar__links li:last-child a {
+    border-bottom: none;
+  }
+
+  .navbar__cta {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+/* Smaller Mobile Screens */
+
+@media (max-width: 480px) {
+  .navbar {
+    min-height: 68px;
+  }
+
+  .navbar__logo {
+    max-width: 135px;
+    max-height: 48px;
+  }
+
+  .navbar__menu {
+    padding: var(--spacing-md) var(--container-padding);
+  }
+}
