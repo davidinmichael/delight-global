@@ -225,6 +225,104 @@
         </div>
       </div>
     </section>
+    <!-- ======================================== CONTACT SECTION ======================================== -->
+    <section class="contact" id="contact">
+      <div class="contact__container container">
+        <!-- Section Header -->
+        <div class="contact__header">
+          <p class="contact__eyebrow" id="contact-eyebrow"></p>
+          <h2 class="contact__heading" id="contact-heading"></h2>
+          <p class="contact__description" id="contact-description"></p>
+        </div>
+        <!-- Contact Layout -->
+        <div class="contact__layout">
+          <!-- Contact Information -->
+          <div class="contact__information">
+            <h3
+              class="contact__information-heading"
+              id="contact-information-heading"
+            ></h3>
+            <!-- Address -->
+            <div class="contact__item">
+              <div class="contact__item-icon" aria-hidden="true">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact__item-content">
+                <h4 class="contact__item-label" id="contact-address-label"></h4>
+                <p class="contact__item-value" id="contact-address-value"></p>
+              </div>
+            </div>
+            <!-- Phone -->
+            <div class="contact__item">
+              <div class="contact__item-icon" aria-hidden="true">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact__item-content">
+                <h4 class="contact__item-label" id="contact-phone-label"></h4>
+                <a
+                  class="contact__item-link"
+                  id="contact-phone-value"
+                  href="tel:+234XXXXXXXXXX"
+                ></a>
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="contact__item">
+              <div class="contact__item-icon" aria-hidden="true">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact__item-content">
+                <h4 class="contact__item-label" id="contact-email-label"></h4>
+                <a
+                  class="contact__item-link"
+                  id="contact-email-value"
+                  href="mailto:info@delightglobalservices.com"
+                ></a>
+              </div>
+            </div>
+            <!-- Business Hours -->
+            <div class="contact__item">
+              <div class="contact__item-icon" aria-hidden="true">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="contact__item-content">
+                <h4 class="contact__item-label" id="contact-hours-label"></h4>
+                <p class="contact__item-value" id="contact-hours-value"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Contact Form -->
+          <div class="contact__form-wrapper">
+            <div class="contact__form-header">
+              <h3 class="contact__form-heading" id="contact-form-heading"></h3>
+              <p
+                class="contact__form-description"
+                id="contact-form-description"
+              ></p>
+            </div>
+            <form class="contact__form" id="contact-form">
+              <!-- Form Fields Rendered from siteConfig -->
+              <div class="contact__form-fields" id="contact-form-fields">
+                <!-- JavaScript will render the form fields here -->
+              </div>
+              <!-- Form Feedback -->
+              <div
+                class="contact__form-feedback"
+                id="contact-form-feedback"
+                role="status"
+                aria-live="polite"
+                hidden
+              ></div>
+              <!-- Submit Button -->
+              <button type="submit" class="contact__submit" id="contact-submit">
+                <span id="contact-submit-label">Submit Enquiry</span>
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Main JavaScript -->
     <script type="module" src="/js/main.js"></script>

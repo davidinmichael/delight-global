@@ -463,4 +463,173 @@ export const siteConfig = {
     ],
     cta: { label: "Work With Us", href: "#contact" },
   },
+  contact: {
+    id: "contact",
+
+    // Section Content
+    eyebrow: "GET IN TOUCH",
+    heading: "Let's Discuss Your Business Needs",
+    description:
+      "Whether you need industrial supplies, procurement support, construction services, or assistance with another business requirement, we're ready to hear from you. Contact us to discuss your needs and explore how we can help.",
+
+    // Contact Information
+    information: {
+      title: "Contact Information",
+
+      address: {
+        label: "Visit Our Office",
+        value:
+          "No. 15 Chief J.D. Oker, Rumunduru/Oro-Igwe, Port Harcourt, Rivers State, Nigeria.",
+      },
+
+      phone: {
+        label: "Call Us",
+        value: "+234 XXX XXX XXXX",
+        href: "tel:+234XXXXXXXXXX",
+      },
+
+      email: {
+        label: "Email Us",
+        value: "info@delightglobalservices.com",
+        href: "mailto:info@delightglobalservices.com",
+      },
+
+      businessHours: {
+        label: "Business Hours",
+        value: "Monday – Friday: 9:00 AM – 5:00 PM",
+      },
+    },
+
+    // Contact Form
+    form: {
+      heading: "Send Us an Enquiry",
+      description:
+        "Complete the form below with details about your enquiry, and our team will get back to you.",
+
+      fields: [
+        {
+          name: "fullName",
+          label: "Full Name",
+          type: "text",
+          placeholder: "Enter your full name",
+          required: true,
+          autocomplete: "name",
+          validationMessage: "Please enter your full name.",
+        },
+        {
+          name: "companyName",
+          label: "Company Name",
+          type: "text",
+          placeholder: "Enter your company name (optional)",
+          required: false,
+          autocomplete: "organization",
+        },
+        {
+          name: "email",
+          label: "Email Address",
+          type: "email",
+          placeholder: "Enter your email address",
+          required: true,
+          autocomplete: "email",
+          validationMessage: "Please enter a valid email address.",
+        },
+        {
+          name: "phone",
+          label: "Phone Number",
+          type: "tel",
+          placeholder: "Enter your phone number",
+          required: true,
+          autocomplete: "tel",
+          validationMessage: "Please enter your phone number.",
+        },
+        {
+          name: "service",
+          label: "Service of Interest",
+          type: "select",
+          placeholder: "Select a service",
+          required: true,
+          validationMessage: "Please select a service of interest.",
+          options: [
+            {
+              value: "industrial-chemicals",
+              label: "Industrial Chemicals & Supplies",
+            },
+            {
+              value: "general-procurement",
+              label: "General Procurement & Imports",
+            },
+            {
+              value: "construction",
+              label: "Construction & Civil Engineering",
+            },
+            {
+              value: "it-equipment",
+              label: "IT Equipment & Supplies",
+            },
+            {
+              value: "cleaning-environmental",
+              label: "Cleaning & Environmental Services",
+            },
+            {
+              value: "stationery-office",
+              label: "Stationery & Office Supplies",
+            },
+            {
+              value: "recruitment-training",
+              label: "Recruitment & Training",
+            },
+            {
+              value: "agriculture",
+              label: "Agriculture & Agricultural Equipment",
+            },
+            {
+              value: "facility-management",
+              label: "Home & Facility Management",
+            },
+            {
+              value: "other",
+              label: "Other",
+            },
+          ],
+        },
+        {
+          name: "message",
+          label: "Your Message",
+          type: "textarea",
+          placeholder:
+            "Tell us about the products, services, or project you need assistance with.",
+          required: true,
+          validationMessage: "Please enter your enquiry message.",
+        },
+      ],
+
+      submitLabel: "Submit Enquiry",
+
+      messages: {
+        validationError:
+          "Please check the form and correct the highlighted fields.",
+        success:
+          "WhatsApp has opened with your enquiry. Please review the message and tap Send to submit it to Delight Global Services Nigeria.",
+        error:
+          "We couldn't prepare your enquiry for WhatsApp. Please try again or contact us directly using the details provided.",
+      },
+    },
+
+    // WhatsApp Submission
+    whatsapp: {
+      number: "2348140980792",
+
+      messageIntro:
+        "Hello Delight Global Services Nigeria, I would like to make an enquiry.",
+
+      messageLabels: {
+        fullName: "Full Name",
+        companyName: "Company Name",
+        email: "Email Address",
+        phone: "Phone Number",
+        service: "Service of Interest",
+        message: "Enquiry Details",
+      },
+    },
+  },
 };

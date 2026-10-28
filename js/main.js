@@ -610,4 +610,406 @@ NAVBAR
   };
 
   initTestimonials();
+  // ========================================
+  // CONTACT SECTION
+  // ========================================
+
+  const initContact = () => {
+    const section = document.querySelector(".contact");
+
+    const eyebrow = document.getElementById("contact-eyebrow");
+    const heading = document.getElementById("contact-heading");
+    const description = document.getElementById("contact-description");
+
+    const informationHeading = document.getElementById(
+      "contact-information-heading",
+    );
+
+    const addressLabel = document.getElementById("contact-address-label");
+    const addressValue = document.getElementById("contact-address-value");
+
+    const phoneLabel = document.getElementById("contact-phone-label");
+    const phoneValue = document.getElementById("contact-phone-value");
+
+    const emailLabel = document.getElementById("contact-email-label");
+    const emailValue = document.getElementById("contact-email-value");
+
+    const hoursLabel = document.getElementById("contact-hours-label");
+    const hoursValue = document.getElementById("contact-hours-value");
+
+    const formHeading = document.getElementById("contact-form-heading");
+    const formDescription = document.getElementById("contact-form-description");
+    const form = document.getElementById("contact-form");
+    const formFields = document.getElementById("contact-form-fields");
+    const formFeedback = document.getElementById("contact-form-feedback");
+    const submitButton = document.getElementById("contact-submit");
+    const submitLabel = document.getElementById("contact-submit-label");
+
+    const contact = siteConfig.contact;
+
+    if (!contact) return;
+
+    // ========================================
+    // SECTION CONTENT
+    // ========================================
+
+    if (section && contact.id) {
+      section.id = contact.id;
+    }
+
+    if (eyebrow) eyebrow.textContent = contact.eyebrow;
+    if (heading) heading.textContent = contact.heading;
+    if (description) description.textContent = contact.description;
+
+    // ========================================
+    // CONTACT INFORMATION
+    // ========================================
+
+    const information = contact.information;
+
+    if (information) {
+      if (informationHeading) {
+        informationHeading.textContent = information.title;
+      }
+
+      if (addressLabel) {
+        addressLabel.textContent = information.address.label;
+      }
+
+      if (addressValue) {
+        addressValue.textContent = information.address.value;
+      }
+
+      if (phoneLabel) {
+        phoneLabel.textContent = information.phone.label;
+      }
+
+      if (phoneValue) {
+        phoneValue.textContent = information.phone.value;
+        phoneValue.href = information.phone.href;
+      }
+
+      if (emailLabel) {
+        emailLabel.textContent = information.email.label;
+      }
+
+      if (emailValue) {
+        emailValue.textContent = information.email.value;
+        emailValue.href = information.email.href;
+      }
+
+      if (hoursLabel) {
+        hoursLabel.textContent = information.businessHours.label;
+      }
+
+      if (hoursValue) {
+        hoursValue.textContent = information.businessHours.value;
+      }
+    }
+
+    // ========================================
+    // FORM CONTENT
+    // ========================================
+
+    const formConfig = contact.form;
+
+    if (!formConfig || !form || !formFields) return;
+
+    if (formHeading) {
+      formHeading.textContent = formConfig.heading;
+    }
+
+    if (formDescription) {
+      formDescription.textContent = formConfig.description;
+    }
+
+    if (submitLabel) {
+      submitLabel.textContent = formConfig.submitLabel;
+    }
+
+    // ========================================
+    // RENDER FORM FIELDS
+    // ========================================
+
+    if (Array.isArray(formConfig.fields)) {
+      formFields.innerHTML = formConfig.fields
+        .map((field) => {
+          const requiredMark = field.required
+            ? ' <span class="contact__required" aria-hidden="true">*</span>'
+            : "";
+
+          const requiredAttribute = field.required ? "required" : "";
+
+          const autocompleteAttribute = field.autocomplete
+            ? `autocomplete="${field.autocomplete}"`
+            : "";
+
+          const fieldId = `contact-${field.name}`;
+          const errorId = `${fieldId}-error`;
+          const fullWidthClass =
+            field.type === "textarea" ? " contact__field--full" : "";
+
+          let inputHTML = "";
+
+          if (field.type === "select") {
+            const options = (field.options || [])
+              .map(
+                (option) => `
+                    <option value="${option.value}">
+                        ${option.label}
+                    </option>
+                `,
+              )
+              .join("");
+
+            inputHTML = `
+                    <select
+                        class="contact__select"
+                        id="${fieldId}"
+                        name="${field.name}"
+                        ${requiredAttribute}
+                        aria-describedby="${errorId}"
+                    >
+                        <option value="">${field.placeholder || "Select an option"}</option>
+                        ${options}
+                    </select>
+                `;
+          } else if (field.type === "textarea") {
+            inputHTML = `
+                    <textarea
+                        class="contact__textarea"
+                        id="${fieldId}"
+                        name="${field.name}"
+                        placeholder="${field.placeholder || ""}"
+                        ${requiredAttribute}
+                        aria-describedby="${errorId}"
+                    ></textarea>
+                `;
+          } else {
+            inputHTML = `
+                    <input
+                        class="contact__input"
+                        type="${field.type}"
+                        id="${fieldId}"
+                        name="${field.name}"
+                        placeholder="${field.placeholder || ""}"
+                        ${requiredAttribute}
+                        ${autocompleteAttribute}
+                        aria-describedby="${errorId}"
+                    >
+                `;
+          }
+
+          return `
+                <div class="contact__field${fullWidthClass}">
+                    <label class="contact__label" for="${fieldId}">
+                        ${field.label}${requiredMark}
+                    </label>
+
+                    ${inputHTML}
+
+                    <p
+                        class="contact__field-error"
+                        id="${errorId}"
+                        aria-live="polite"
+                    ></p>
+                </div>
+            `;
+        })
+        .join("");
+    }
+
+    // ========================================
+    // FORM FEEDBACK
+    // ========================================
+
+    const showFeedback = (message, type) => {
+      if (!formFeedback) return;
+
+      formFeedback.textContent = message;
+      formFeedback.className = `contact__form-feedback contact__form-feedback--${type}`;
+
+      formFeedback.hidden = false;
+    };
+
+    const clearFeedback = () => {
+      if (!formFeedback) return;
+
+      formFeedback.textContent = "";
+      formFeedback.className = "contact__form-feedback";
+      formFeedback.hidden = true;
+    };
+
+    // ========================================
+    // FIELD VALIDATION
+    // ========================================
+
+    const validateField = (field) => {
+      const input = form.elements.namedItem(field.name);
+
+      if (!input) return true;
+
+      const errorElement = document.getElementById(
+        `contact-${field.name}-error`,
+      );
+
+      let errorMessage = "";
+
+      if (field.required && !input.value.trim()) {
+        errorMessage =
+          field.validationMessage ||
+          `Please complete the ${field.label.toLowerCase()} field.`;
+      } else if (
+        field.type === "email" &&
+        input.value.trim() &&
+        !input.validity.valid
+      ) {
+        errorMessage =
+          field.validationMessage || "Please enter a valid email address.";
+      } else if (
+        field.type === "tel" &&
+        input.value.trim() &&
+        !/^[+\d\s().-]{7,25}$/.test(input.value.trim())
+      ) {
+        errorMessage = "Please enter a valid phone number.";
+      }
+
+      input.setAttribute("aria-invalid", String(Boolean(errorMessage)));
+
+      if (errorElement) {
+        errorElement.textContent = errorMessage;
+      }
+
+      return !errorMessage;
+    };
+
+    const clearFieldError = (input) => {
+      input.removeAttribute("aria-invalid");
+
+      const errorElement = document.getElementById(
+        `contact-${input.name}-error`,
+      );
+
+      if (errorElement) {
+        errorElement.textContent = "";
+      }
+    };
+
+    formFields.addEventListener("input", (event) => {
+      const input = event.target;
+
+      if (input.matches("input, textarea, select")) {
+        clearFieldError(input);
+        clearFeedback();
+      }
+    });
+
+    formFields.addEventListener("change", (event) => {
+      const input = event.target;
+
+      if (input.matches("input, textarea, select")) {
+        clearFieldError(input);
+        clearFeedback();
+      }
+    });
+
+    // ========================================
+    // WHATSAPP SUBMISSION
+    // ========================================
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      clearFeedback();
+
+      // Validate all configured fields.
+      const validationResults = formConfig.fields.map(validateField);
+      const isValid = validationResults.every(Boolean);
+
+      if (!isValid) {
+        showFeedback(formConfig.messages.validationError, "error");
+
+        const firstInvalidField = form.querySelector('[aria-invalid="true"]');
+
+        if (firstInvalidField) {
+          firstInvalidField.focus();
+        }
+
+        return;
+      }
+
+      const whatsappNumber = contact.whatsapp?.number || "";
+
+      // Only accept a configured international number containing digits.
+      if (!/^\d{10,15}$/.test(whatsappNumber)) {
+        showFeedback(formConfig.messages.error, "error");
+
+        console.error(
+          "Contact form: Configure a valid WhatsApp number in siteConfig.contact.whatsapp.number.",
+        );
+
+        return;
+      }
+
+      // Collect the form values.
+      const formData = new FormData(form);
+      const values = Object.fromEntries(formData.entries());
+
+      // Convert the selected service value to its display label.
+      const serviceField = formConfig.fields.find(
+        (field) => field.name === "service",
+      );
+
+      const selectedService = serviceField?.options?.find(
+        (option) => option.value === values.service,
+      );
+
+      if (selectedService) {
+        values.service = selectedService.label;
+      }
+
+      // Build a readable WhatsApp message.
+      const messageLabels = contact.whatsapp.messageLabels;
+
+      const messageLines = [
+        contact.whatsapp.messageIntro,
+        "",
+        ...formConfig.fields
+          .map((field) => {
+            const value = String(values[field.name] || "").trim();
+
+            if (!value) return null;
+
+            const label = messageLabels[field.name] || field.label;
+
+            return `${label}: ${value}`;
+          })
+          .filter(Boolean),
+      ];
+
+      const message = messageLines.join("\n");
+
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      // Open WhatsApp in a new tab/window.
+      const whatsappWindow = window.open(
+        whatsappURL,
+        "_blank",
+      );
+
+      if (whatsappWindow) {
+        showFeedback(formConfig.messages.success, "success");
+      } else {
+        // If the browser blocks the new window, navigate in the current tab.
+        showFeedback(
+          "Opening WhatsApp. Please review your enquiry and tap Send to submit it.",
+          "success",
+        );
+
+        // window.location.href = whatsappURL;
+      }
+    });
+  };
+
+  initContact();
 });
