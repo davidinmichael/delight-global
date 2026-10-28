@@ -1,5 +1,5 @@
 @import url("./base.css");
-@import url("/css/layout.css");
+@import url("./css/layout.css");
 @import url("/css/navbar.css");
 @import url("/css/hero.css");
 @import url("/css/about.css");
@@ -8,5 +8,5 @@
 @import url("/css/why-choose-us.css");
 @import url("/css/testimonials.css");
 @import url("/css/contact.css");
-@import url("/css/footer.css");
+@import url("./css/footer.css");
 /* @import url("/css/projects.css"); */
