@@ -1,0 +1,234 @@
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  padding-top: var(--spacing-3xl);
+}
+
+.footer__container {
+  width: 100%;
+}
+
+/* Main Layout */
+
+.footer__main {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1.2fr 1.2fr;
+  gap: var(--spacing-2xl);
+  padding-bottom: var(--spacing-3xl);
+}
+
+/* Brand */
+
+.footer__brand {
+  max-width: 320px;
+}
+
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  text-decoration: none;
+}
+
+.footer__logo img {
+  display: block;
+  width: auto;
+  max-width: 190px;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+.footer__logo-text {
+  color: #ffffff;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.footer__description {
+  color: #d1d5db;
+  font-size: var(--font-size-sm);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Headings */
+
+.footer__heading {
+  color: #ffffff;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Links */
+
+.footer__links,
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__links a {
+  color: #d1d5db;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer__links a:hover,
+.footer__links a:focus-visible {
+  color: var(--primary-color);
+}
+
+/* Contact */
+
+.footer__contact-list {
+  gap: var(--spacing-lg);
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.footer__contact-item i {
+  color: var(--primary-color);
+  margin-top: 4px;
+  min-width: 16px;
+}
+
+.footer__contact-item a {
+  color: #d1d5db;
+  font-size: var(--font-size-sm);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer__contact-item a:hover,
+.footer__contact-item a:focus-visible {
+  color: var(--primary-color);
+}
+
+/* Social Links */
+
+.footer__socials {
+  margin-top: var(--spacing-xl);
+}
+
+.footer__social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius-full);
+  color: #ffffff;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Footer Bottom */
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: var(--spacing-lg) 0;
+}
+
+.footer__copyright {
+  color: #d1d5db;
+  font-size: var(--font-size-sm);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.footer__back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: #ffffff;
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.footer__back-to-top:hover,
+.footer__back-to-top:focus-visible {
+  color: var(--primary-color);
+}
+
+/* Accessibility */
+
+.footer a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1024px) {
+  .footer__main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-2xl) var(--spacing-xl);
+  }
+
+  .footer__brand {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding-top: var(--spacing-2xl);
+  }
+
+  .footer__main {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    padding-bottom: var(--spacing-2xl);
+  }
+
+  .footer__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer__copyright {
+    font-size: var(--font-size-xs);
+  }
+}

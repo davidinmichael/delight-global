@@ -2,7 +2,7 @@ export const siteConfig = {
   company: {
     name: "Delight Global Services Nigeria",
     shortName: "Delight Global Services",
-    logo: "https://res.cloudinary.com/dskpdlvxu/image/upload/v1760525529/logo_oxfj3k.jpg",
+    logo: "https://res.cloudinary.com/dskpdlvxu/image/upload/v1793180235/logo_xjebvk.jpg",
     logoAlt: "Delight Global Services Nigeria logo",
   },
 
@@ -20,10 +20,10 @@ export const siteConfig = {
         label: "Our Services",
         href: "#services",
       },
-      {
-        label: "Past Projects",
-        href: "#projects",
-      },
+      // {
+      //   label: "Past Projects",
+      //   href: "#projects",
+      // },
       {
         label: "Testimonials",
         href: "#testimonials",
@@ -60,7 +60,7 @@ export const siteConfig = {
     ],
 
     image: {
-      src: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=80",
+      src: "https://res.cloudinary.com/dskpdlvxu/image/upload/v1793177972/hero_tvuna6.jpg",
       alt: "Professionals collaborating in a business environment",
     },
   },
@@ -78,12 +78,12 @@ export const siteConfig = {
       "We work to understand our clients' requirements and provide practical solutions that align with their needs, helping them source essential supplies and access services across different sectors.",
 
     cta: {
-      label: "Learn More About Us",
-      href: "#about",
+      label: "Contact Us",
+      href: "#contact",
     },
 
     image: {
-      src: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80",
+      src: "https://res.cloudinary.com/dskpdlvxu/image/upload/v1793178122/about_gxapvk.jpg",
       alt: "Business professionals reviewing documents and collaborating on project requirements",
     },
   },
@@ -137,7 +137,7 @@ export const siteConfig = {
         description:
           "Supply of IT equipment and technology products to support business operations and workplace needs.",
         image: {
-          src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80",
+          src: "https://res.cloudinary.com/dskpdlvxu/image/upload/v1793178901/service-it-equipment_xif12g.jpg",
           alt: "Modern office workspace equipped for business operations",
         },
       },
@@ -170,7 +170,7 @@ export const siteConfig = {
         description:
           "Recruitment and training support to help organizations address staffing needs and develop workforce capabilities.",
         image: {
-          src: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80",
+          src: "https://res.cloudinary.com/dskpdlvxu/image/upload/v1793179092/service-recruitment_tvlc9f.jpg",
           alt: "Professionals collaborating in a business and training environment",
         },
       },
@@ -484,7 +484,7 @@ export const siteConfig = {
 
       phone: {
         label: "Call Us",
-        value: "+234 XXX XXX XXXX",
+        value: "+234 803 341 2515",
         href: "tel:+234XXXXXXXXXX",
       },
 
@@ -617,7 +617,7 @@ export const siteConfig = {
 
     // WhatsApp Submission
     whatsapp: {
-      number: "2348140980792",
+      number: "2348033412515",
 
       messageIntro:
         "Hello Delight Global Services Nigeria, I would like to make an enquiry.",
@@ -630,6 +630,126 @@ export const siteConfig = {
         service: "Service of Interest",
         message: "Enquiry Details",
       },
+    },
+  },
+  footer: {
+    description:
+      "Your partner for procurement, industrial supplies, construction, and diverse business solutions.",
+
+    quickLinks: {
+      heading: "Quick Links",
+      items: [
+        {
+          label: "Home",
+          href: "#home",
+        },
+        {
+          label: "About Us",
+          href: "#about",
+        },
+        {
+          label: "Our Services",
+          href: "#services",
+        },
+        {
+          label: "Past Projects",
+          href: "#projects",
+        },
+        {
+          label: "Contact Us",
+          href: "#contact",
+        },
+      ],
+    },
+
+    services: {
+      heading: "Our Services",
+      items: [
+        {
+          label: "Industrial Chemicals & Supplies",
+          href: "#services",
+        },
+        {
+          label: "General Procurement & Imports",
+          href: "#services",
+        },
+        {
+          label: "Construction & Civil Engineering",
+          href: "#services",
+        },
+        {
+          label: "IT Equipment & Supplies",
+          href: "#services",
+        },
+        {
+          label: "Cleaning & Environmental Services",
+          href: "#services",
+        },
+        {
+          label: "Stationery & Office Supplies",
+          href: "#services",
+        },
+        {
+          label: "Recruitment & Training",
+          href: "#services",
+        },
+        {
+          label: "Agriculture & Agricultural Equipment",
+          href: "#services",
+        },
+        {
+          label: "Home & Facility Management",
+          href: "#services",
+        },
+      ],
+    },
+
+    contact: {
+      heading: "Contact Us",
+
+      address: {
+        value:
+          "No. 15 Chief J.D. Oker, Rumunduru/Oro-Igwe, Port Harcourt, Rivers State, Nigeria.",
+        href: "",
+      },
+
+      phone: {
+        value: "+234 803 341 2515",
+        href: "",
+      },
+
+      email: {
+        value: "info@delightglobalservices.com",
+        href: "mailto:info@delightglobalservices.com",
+      },
+    },
+
+    socialMedia: {
+      heading: "Connect With Us",
+      items: [
+        {
+          platform: "Facebook",
+          icon: "fa-brands fa-facebook-f",
+          href: "",
+        },
+        {
+          platform: "Instagram",
+          icon: "fa-brands fa-instagram",
+          href: "",
+        },
+        {
+          platform: "LinkedIn",
+          icon: "fa-brands fa-linkedin-in",
+          href: "",
+        },
+      ],
+    },
+
+    copyright: "All rights reserved.",
+
+    backToTop: {
+      label: "Back to Top",
+      href: "#home",
     },
   },
 };

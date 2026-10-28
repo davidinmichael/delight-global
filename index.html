@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
 
     <title>Delight Global Services</title>
 
@@ -152,31 +153,6 @@
         </div>
       </div>
     </section>
-    <!-- ========================= PAST PROJECTS SECTION ========================== -->
-
-    <section class="projects" id="projects">
-      <div class="projects__container container">
-        <!-- Section Header -->
-        <div class="projects__header">
-          <p class="projects__eyebrow" id="projects-eyebrow"></p>
-
-          <h2 class="projects__heading" id="projects-heading"></h2>
-
-          <p class="projects__description" id="projects-description"></p>
-        </div>
-
-        <!-- Project Cards -->
-        <div class="projects__grid" id="projects-grid">
-          <!-- Project cards will be rendered from siteConfig -->
-        </div>
-
-        <!-- Section CTA -->
-        <div class="projects__actions" id="projects-actions">
-          <!-- CTA will be rendered from siteConfig -->
-        </div>
-      </div>
-    </section>
-    <!-- ========================= WHY CHOOSE US SECTION ========================== -->
 
     <section class="why-choose-us" id="why-choose-us">
       <div class="why-choose-us__container container">
@@ -323,6 +299,86 @@
         </div>
       </div>
     </section>
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+      <div class="footer__container container">
+        <!-- Main Footer Content -->
+        <div class="footer__main">
+          <!-- Company Information -->
+          <div class="footer__brand">
+            <a href="#home" class="footer__logo" id="footer-logo">
+              <!-- Logo or company name rendered by JavaScript -->
+            </a>
+
+            <p class="footer__description" id="footer-description"></p>
+
+            <div class="footer__socials">
+              <h3 class="footer__heading" id="footer-social-heading"></h3>
+
+              <div class="footer__social-links" id="footer-social-links"></div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer__column">
+            <h3 class="footer__heading" id="footer-quick-links-heading"></h3>
+
+            <ul class="footer__links" id="footer-quick-links"></ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer__column footer__column--services">
+            <h3 class="footer__heading" id="footer-services-heading"></h3>
+
+            <ul class="footer__links" id="footer-services-links"></ul>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="footer__column footer__column--contact">
+            <h3 class="footer__heading" id="footer-contact-heading"></h3>
+
+            <ul class="footer__contact-list">
+              <li class="footer__contact-item">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+
+                <a
+                  href=""
+                  id="footer-address"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></a>
+              </li>
+
+              <li class="footer__contact-item">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+
+                <a id="footer-phone" href=""></a>
+              </li>
+
+              <li class="footer__contact-item">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+
+                <a id="footer-email" href=""></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; <span id="footer-year"></span>
+            <span id="footer-company-name"></span>.
+            <span id="footer-copyright-text"></span>
+          </p>
+
+          <a href="#home" class="footer__back-to-top" id="footer-back-to-top">
+            <span>Back to Top</span>
+            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
 
     <!-- Main JavaScript -->
     <script type="module" src="/js/main.js"></script>

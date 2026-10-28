@@ -1,6 +1,11 @@
 import { siteConfig } from "./config.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  const favicon = document.querySelector('link[rel="shortcut icon"]');
+
+  if (favicon && siteConfig.company.logo) {
+    favicon.href = siteConfig.company.logo;
+  }
   /* ========================================
 NAVBAR
 ======================================== */
@@ -992,10 +997,7 @@ NAVBAR
       const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
       // Open WhatsApp in a new tab/window.
-      const whatsappWindow = window.open(
-        whatsappURL,
-        "_blank",
-      );
+      const whatsappWindow = window.open(whatsappURL, "_blank");
 
       if (whatsappWindow) {
         showFeedback(formConfig.messages.success, "success");
@@ -1012,4 +1014,220 @@ NAVBAR
   };
 
   initContact();
+
+  const initFooter = () => {
+    const footer = siteConfig.footer;
+
+    if (!footer) return;
+
+    const company = siteConfig.company;
+
+    // ========================================
+    // COMPANY BRAND
+    // ========================================
+
+    const logoElement = document.getElementById("footer-logo");
+    const descriptionElement = document.getElementById("footer-description");
+
+    if (logoElement) {
+      logoElement.replaceChildren();
+
+      if (company.logo) {
+        const logoImage = document.createElement("img");
+
+        logoImage.src = company.logo;
+        logoImage.alt = `${company.name} logo`;
+
+        logoElement.appendChild(logoImage);
+      } else {
+        const logoText = document.createElement("span");
+
+        logoText.className = "footer__logo-text";
+        logoText.textContent = company.name;
+
+        logoElement.appendChild(logoText);
+      }
+    }
+
+    if (descriptionElement) {
+      descriptionElement.textContent = footer.description;
+    }
+
+    // ========================================
+    // QUICK LINKS
+    // ========================================
+
+    const quickLinksHeading = document.getElementById(
+      "footer-quick-links-heading",
+    );
+
+    const quickLinksContainer = document.getElementById("footer-quick-links");
+
+    if (quickLinksHeading) {
+      quickLinksHeading.textContent = footer.quickLinks.heading;
+    }
+
+    renderLinks(quickLinksContainer, footer.quickLinks.items);
+
+    // ========================================
+    // SERVICES
+    // ========================================
+
+    const servicesHeading = document.getElementById("footer-services-heading");
+
+    const servicesContainer = document.getElementById("footer-services-links");
+
+    if (servicesHeading) {
+      servicesHeading.textContent = footer.services.heading;
+    }
+
+    renderLinks(servicesContainer, footer.services.items);
+
+    // ========================================
+    // CONTACT INFORMATION
+    // ========================================
+
+    const contact = footer.contact;
+
+    const contactHeading = document.getElementById("footer-contact-heading");
+
+    if (contactHeading) {
+      contactHeading.textContent = contact.heading;
+    }
+
+    // Address
+    const addressElement = document.getElementById("footer-address");
+
+    if (addressElement) {
+      addressElement.textContent = contact.address.value;
+
+      if (contact.address.href) {
+        addressElement.href = contact.address.href;
+        addressElement.hidden = false;
+      } else {
+        // Display the address without creating a misleading link.
+        addressElement.removeAttribute("href");
+        addressElement.hidden = false;
+      }
+    }
+
+    // Phone
+    const phoneElement = document.getElementById("footer-phone");
+
+    if (phoneElement) {
+      phoneElement.textContent = contact.phone.value;
+
+      if (contact.phone.href) {
+        phoneElement.href = contact.phone.href;
+        phoneElement.hidden = false;
+      } else {
+        phoneElement.removeAttribute("href");
+        phoneElement.hidden = false;
+      }
+    }
+
+    // Email
+    const emailElement = document.getElementById("footer-email");
+
+    if (emailElement) {
+      emailElement.textContent = contact.email.value;
+      emailElement.href = contact.email.href;
+    }
+
+    // ========================================
+    // SOCIAL MEDIA
+    // ========================================
+
+    const socialHeading = document.getElementById("footer-social-heading");
+
+    const socialLinksContainer = document.getElementById("footer-social-links");
+
+    if (socialHeading) {
+      socialHeading.textContent = footer.socialMedia.heading;
+    }
+
+    if (socialLinksContainer) {
+      socialLinksContainer.replaceChildren();
+
+      footer.socialMedia.items
+        .filter((social) => social.href)
+        .forEach((social) => {
+          const link = document.createElement("a");
+
+          link.className = "footer__social-link";
+          link.href = social.href;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.setAttribute("aria-label", social.platform);
+
+          const icon = document.createElement("i");
+
+          icon.className = social.icon;
+          icon.setAttribute("aria-hidden", "true");
+
+          link.appendChild(icon);
+          socialLinksContainer.appendChild(link);
+        });
+    }
+
+    // ========================================
+    // COPYRIGHT
+    // ========================================
+
+    const yearElement = document.getElementById("footer-year");
+
+    const companyNameElement = document.getElementById("footer-company-name");
+
+    const copyrightElement = document.getElementById("footer-copyright-text");
+
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+
+    if (companyNameElement) {
+      companyNameElement.textContent = company.name;
+    }
+
+    if (copyrightElement) {
+      copyrightElement.textContent = footer.copyright;
+    }
+
+    // ========================================
+    // BACK TO TOP
+    // ========================================
+
+    const backToTopElement = document.getElementById("footer-back-to-top");
+
+    if (backToTopElement) {
+      backToTopElement.href = footer.backToTop.href;
+
+      const label = backToTopElement.querySelector("span");
+
+      if (label) {
+        label.textContent = footer.backToTop.label;
+      }
+    }
+  };
+
+  // ========================================
+  // REUSABLE LINK RENDERER
+  // ========================================
+
+  function renderLinks(container, items) {
+    if (!container || !Array.isArray(items)) return;
+
+    container.replaceChildren();
+
+    items.forEach((item) => {
+      const listItem = document.createElement("li");
+      const link = document.createElement("a");
+
+      link.textContent = item.label;
+      link.href = item.href;
+
+      listItem.appendChild(link);
+      container.appendChild(listItem);
+    });
+  }
+  initFooter();
 });
